@@ -16,7 +16,7 @@ object UserScriptEngine {
             name = "全网去广告增强",
             matchPattern = "*://*/*",
             description = "屏蔽悬浮广告、App 唤起条与常见诱导弹窗",
-            code = "document.querySelectorAll('[class*="open-app"],[class*="ad-"]').forEach(e=>e.remove());",
+            code = "document.querySelectorAll('[class*=\"open-app\"],[class*=\"ad-\"]').forEach(e=>e.remove());",
             enabled = true,
             isWide = true,
             hitCount = 142,
@@ -80,8 +80,8 @@ object UserScriptEngine {
         runCatching {
             val req = Request.Builder().url(scriptUrl).build()
             val body = client.newCall(req).execute().body?.string() ?: return@runCatching null
-            val name = Regex("@name\s+(.+)").find(body)?.groupValues?.get(1)?.trim() ?: "GreasyFork 脚本"
-            val match = Regex("@match\s+(.+)").find(body)?.groupValues?.get(1)?.trim() ?: "*://*/*"
+            val name = Regex("@name\\s+(.+)").find(body)?.groupValues?.get(1)?.trim() ?: "GreasyFork 脚本"
+            val match = Regex("@match\\s+(.+)").find(body)?.groupValues?.get(1)?.trim() ?: "*://*/*"
             UserScriptBlock(
                 id = System.currentTimeMillis(),
                 name = name,
