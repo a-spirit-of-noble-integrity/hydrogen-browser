@@ -45,7 +45,7 @@ object AiAssistantEngine {
         val clean = prompt.trim()
         val js = when {
             clean.contains("隐藏") || clean.contains("侧边栏") ->
-                "document.querySelectorAll('aside, .sidebar, [class*="side"]').forEach(e => e.style.display = 'none');"
+                "document.querySelectorAll('aside, .sidebar, [class*=\"side\"]').forEach(e => e.style.display = 'none');"
             clean.contains("夜间") || clean.contains("深色") ->
                 "document.documentElement.style.filter = 'invert(0.9) hue-rotate(180deg)';"
             else ->
