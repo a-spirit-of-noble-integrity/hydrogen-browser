@@ -3,7 +3,7 @@ package com.hydrogen.browser.model
 import androidx.compose.ui.graphics.Color
 
 enum class SearchEngine(val label: String, val searchUrl: String) {
-    BING("必应", "\[suspicious link removed\]"),
+    BING("必应", "https://www.bing.com/search?q="),
     QUARK("夸克", "https://quark.sm.cn/s?q="),
     METASO("秘塔", "https://metaso.cn/?q="),
     GOOGLE("谷歌", "https://www.google.com/search?q=")
